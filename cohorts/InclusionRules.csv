@@ -1,7 +1,0 @@
-"cohortName","ruleSequence","ruleName","cohortId"
-"OT2DSI_T2D",0,"Anti-diabetic medication after index date",1
-"OT2DSI_T2D",1,"No T2D diagnosis before index date",1
-"OT2DSI_T2D",2,"No T1D diagnosis before index date",1
-"OT2DSI_T2D",3,"No T1D diagnosis after index date",1
-"OT2DSI_T2D",4,"No insulin usage before index date",1
-"OT2DSI_T2D",5,"No antidiabetic medication before index date",1
