@@ -1,0 +1,24 @@
+Package: OT2DSI
+Type: Package
+Title: Observational Study of Type 2 Diabetes and its Complications: A Chronological Overview Using the OHDSI Network
+Version: 0.1.0
+Author: IQVIA OMOP Data Science Team
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Imports:
+    tidyverse,
+    dplyr,
+    tidyr,
+    stringr,
+    purrr,
+    ggplot2,
+    magrittr,
+    jsonlite,
+    SqlRender,
+    DatabaseConnector,
+    grDevices,
+    RColorBrewer
+Encoding: UTF-8
+LazyData: true
