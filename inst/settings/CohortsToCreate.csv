@@ -1,0 +1,9 @@
+atlasId,atlasName,cohortId,name,cohortType
+2599,OT2DSI_T2D,1,OT2DSI_T2D,0
+2611,OT2DSI_Diabetic_neuropathy,2,OT2DSI_Diabetic_neuropathy,1
+2803,OT2DSI_Heart_Failure,3,OT2DSI_Heart_Failure,1
+2612,OT2DSI_CKD,4,OT2DSI_CKD,1
+2613,OT2DSI_CHD_&Excluding_HF%,5,OT2DSI_CHD_&Excluding_HF%,1
+2614,OT2DSI_CeVD,6,OT2DSI_CeVD,1
+2616,OT2DSI_Diabetic_retinopathy,7,OT2DSI_Diabetic_retinopathy,1
+2600,OT2DSI_PAD,8,OT2DSI_PAD,1
