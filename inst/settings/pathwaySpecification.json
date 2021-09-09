@@ -1,0 +1,1385 @@
+{
+  "id": 100,
+  "name": "OT2DSI",
+  "targetCohorts": [
+    {
+      "id": 2599,
+      "name": "OT2DSI_T2D",
+      "description": {},
+      "createdBy": {},
+      "createdDate": {},
+      "modifiedBy": {},
+      "modifiedDate": {},
+      "code": {},
+      "pathwayCohortId": 661
+    }
+  ],
+  "eventCohorts": [
+    {
+      "id": 2611,
+      "name": "OT2DSI_Diabetic_neuropathy",
+      "description": {},
+      "createdBy": {},
+      "createdDate": {},
+      "modifiedBy": {},
+      "modifiedDate": {},
+      "code": 3,
+      "pathwayCohortId": 678
+    },
+    {
+      "id": 2803,
+      "name": "OT2DSI_Heart_Failure",
+      "description": {},
+      "createdBy": {},
+      "createdDate": {},
+      "modifiedBy": {},
+      "modifiedDate": {},
+      "code": 5,
+      "pathwayCohortId": 677
+    },
+    {
+      "id": 2612,
+      "name": "OT2DSI_CKD",
+      "description": {},
+      "createdBy": {},
+      "createdDate": {},
+      "modifiedBy": {},
+      "modifiedDate": {},
+      "code": 1,
+      "pathwayCohortId": 679
+    },
+    {
+      "id": 2613,
+      "name": "OT2DSI_CHD_Excluding_HF",
+      "description": {},
+      "createdBy": {},
+      "createdDate": {},
+      "modifiedBy": {},
+      "modifiedDate": {},
+      "code": 0,
+      "pathwayCohortId": 680
+    },
+    {
+      "id": 2614,
+      "name": "OT2DSI_CeVD",
+      "description": {},
+      "createdBy": {},
+      "createdDate": {},
+      "modifiedBy": {},
+      "modifiedDate": {},
+      "code": 2,
+      "pathwayCohortId": 681
+    },
+    {
+      "id": 2616,
+      "name": "OT2DSI_Diabetic_retinopathy",
+      "description": {},
+      "createdBy": {},
+      "createdDate": {},
+      "modifiedBy": {},
+      "modifiedDate": {},
+      "code": 4,
+      "pathwayCohortId": 682
+    },
+    {
+      "id": 2600,
+      "name": "OT2DSI_PAD",
+      "description": {},
+      "createdBy": {},
+      "createdDate": {},
+      "modifiedBy": {},
+      "modifiedDate": {},
+      "code": 6,
+      "pathwayCohortId": 683
+    }
+  ],
+  "combinationWindow": 0,
+  "minSegmentLength": {},
+  "minCellCount": 5,
+  "maxDepth": 7,
+  "allowRepeats": false,
+  "createdBy": {
+    "id": 1009,
+    "name": "",
+    "login": ""
+  },
+  "createdDate": 1594655507841,
+  "modifiedBy": {
+    "id": 1009,
+    "name": "",
+    "login": ""
+  },
+  "modifiedDate": 1597057222822,
+  "hashCode": -1922734177,
+  "expression": {
+    "name": "OT2DSI",
+    "targetCohorts": [
+      {
+        "id": 2599,
+        "name": "OT2DSI_T2D",
+        "expression": {
+          "cdmVersionRange": ">=5.0.0",
+          "PrimaryCriteria": {
+            "CriteriaList": [
+              {
+                "ConditionOccurrence": {
+                  "CodesetId": 4,
+                  "OccurrenceStartDate": {
+                    "Value": "2001-01-01",
+                    "Op": "bt",
+                    "Extent": "2019-12-31"
+                  },
+                  "ConditionTypeExclude": false,
+                  "Age": {
+                    "Value": 18,
+                    "Op": "gte"
+                  }
+                }
+              }
+            ],
+            "ObservationWindow": {
+              "PriorDays": 365,
+              "PostDays": 0
+            },
+            "PrimaryCriteriaLimit": {
+              "Type": "First"
+            }
+          },
+          "ConceptSets": [
+            {
+              "id": 2,
+              "name": "[DMP-1075] Insulin",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 1502905,
+                      "CONCEPT_NAME": "insulin glargine",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "274783",
+                      "DOMAIN_ID": "Drug",
+                      "VOCABULARY_ID": "RxNorm",
+                      "CONCEPT_CLASS_ID": "Ingredient"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 3,
+              "name": "[DMP-1075] Anti-diabetic medication",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 21600712,
+                      "CONCEPT_NAME": "DRUGS USED IN DIABETES",
+                      "STANDARD_CONCEPT": "C",
+                      "STANDARD_CONCEPT_CAPTION": "Classification",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "A10",
+                      "DOMAIN_ID": "Drug",
+                      "VOCABULARY_ID": "ATC",
+                      "CONCEPT_CLASS_ID": "ATC 2nd"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 4,
+              "name": "[DMP-1075] T2D",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 443732,
+                      "CONCEPT_NAME": "Disorder due to type 2 diabetes mellitus",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "422014003",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 201826,
+                      "CONCEPT_NAME": "Type 2 diabetes mellitus",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "44054006",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 4008576,
+                      "CONCEPT_NAME": "Diabetes mellitus without complication",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "111552007",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": false,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 5,
+              "name": "[DMP-1075] T1D",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 435216,
+                      "CONCEPT_NAME": "Disorder due to type 1 diabetes mellitus",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "420868002",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 201254,
+                      "CONCEPT_NAME": "Type 1 diabetes mellitus",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "46635009",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 40484648,
+                      "CONCEPT_NAME": "Type 1 diabetes mellitus uncontrolled",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "444073006",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            }
+          ],
+          "QualifiedLimit": {
+            "Type": "First"
+          },
+          "ExpressionLimit": {
+            "Type": "First"
+          },
+          "InclusionRules": [
+            {
+              "name": "Anti-diabetic medication after index date",
+              "expression": {
+                "Type": "ALL",
+                "CriteriaList": [
+                  {
+                    "Criteria": {
+                      "DrugExposure": {
+                        "CodesetId": 3,
+                        "OccurrenceStartDate": {
+                          "Value": "2001-01-01",
+                          "Op": "gte"
+                        },
+                        "DrugTypeExclude": false
+                      }
+                    },
+                    "StartWindow": {
+                      "Start": {
+                        "Coeff": -1
+                      },
+                      "End": {
+                        "Coeff": 1
+                      },
+                      "UseIndexEnd": false,
+                      "UseEventEnd": false
+                    },
+                    "RestrictVisit": false,
+                    "IgnoreObservationPeriod": false,
+                    "Occurrence": {
+                      "Type": 2,
+                      "Count": 1,
+                      "IsDistinct": false
+                    }
+                  }
+                ],
+                "DemographicCriteriaList": [],
+                "Groups": []
+              }
+            },
+            {
+              "name": "No T2D diagnosis before index date",
+              "expression": {
+                "Type": "ALL",
+                "CriteriaList": [
+                  {
+                    "Criteria": {
+                      "ConditionOccurrence": {
+                        "CodesetId": 4,
+                        "ConditionTypeExclude": false
+                      }
+                    },
+                    "StartWindow": {
+                      "Start": {
+                        "Coeff": -1
+                      },
+                      "End": {
+                        "Days": 1,
+                        "Coeff": -1
+                      },
+                      "UseIndexEnd": false,
+                      "UseEventEnd": false
+                    },
+                    "RestrictVisit": false,
+                    "IgnoreObservationPeriod": false,
+                    "Occurrence": {
+                      "Type": 0,
+                      "Count": 0,
+                      "IsDistinct": false
+                    }
+                  }
+                ],
+                "DemographicCriteriaList": [],
+                "Groups": []
+              }
+            },
+            {
+              "name": "No T1D diagnosis before index date",
+              "expression": {
+                "Type": "ALL",
+                "CriteriaList": [
+                  {
+                    "Criteria": {
+                      "ConditionOccurrence": {
+                        "CodesetId": 5,
+                        "ConditionTypeExclude": false
+                      }
+                    },
+                    "StartWindow": {
+                      "Start": {
+                        "Coeff": -1
+                      },
+                      "End": {
+                        "Days": 0,
+                        "Coeff": 1
+                      },
+                      "UseIndexEnd": false,
+                      "UseEventEnd": false
+                    },
+                    "RestrictVisit": false,
+                    "IgnoreObservationPeriod": false,
+                    "Occurrence": {
+                      "Type": 0,
+                      "Count": 0,
+                      "IsDistinct": false
+                    }
+                  }
+                ],
+                "DemographicCriteriaList": [],
+                "Groups": []
+              }
+            },
+            {
+              "name": "No T1D diagnosis after index date",
+              "expression": {
+                "Type": "ALL",
+                "CriteriaList": [
+                  {
+                    "Criteria": {
+                      "ConditionOccurrence": {
+                        "CodesetId": 5,
+                        "ConditionTypeExclude": false
+                      }
+                    },
+                    "StartWindow": {
+                      "Start": {
+                        "Days": 0,
+                        "Coeff": -1
+                      },
+                      "End": {
+                        "Coeff": 1
+                      },
+                      "UseIndexEnd": false,
+                      "UseEventEnd": false
+                    },
+                    "RestrictVisit": false,
+                    "IgnoreObservationPeriod": false,
+                    "Occurrence": {
+                      "Type": 1,
+                      "Count": 1,
+                      "IsDistinct": false
+                    }
+                  }
+                ],
+                "DemographicCriteriaList": [],
+                "Groups": []
+              }
+            },
+            {
+              "name": "No insulin usage before index date",
+              "expression": {
+                "Type": "ALL",
+                "CriteriaList": [
+                  {
+                    "Criteria": {
+                      "DrugExposure": {
+                        "CodesetId": 2,
+                        "DrugTypeExclude": false
+                      }
+                    },
+                    "StartWindow": {
+                      "Start": {
+                        "Coeff": -1
+                      },
+                      "End": {
+                        "Days": 30,
+                        "Coeff": 1
+                      },
+                      "UseIndexEnd": false,
+                      "UseEventEnd": false
+                    },
+                    "RestrictVisit": false,
+                    "IgnoreObservationPeriod": false,
+                    "Occurrence": {
+                      "Type": 0,
+                      "Count": 0,
+                      "IsDistinct": false
+                    }
+                  }
+                ],
+                "DemographicCriteriaList": [],
+                "Groups": []
+              }
+            },
+            {
+              "name": "No antidiabetic medication before index date",
+              "expression": {
+                "Type": "ALL",
+                "CriteriaList": [
+                  {
+                    "Criteria": {
+                      "DrugExposure": {
+                        "CodesetId": 3,
+                        "DrugTypeExclude": false
+                      }
+                    },
+                    "StartWindow": {
+                      "Start": {
+                        "Coeff": -1
+                      },
+                      "End": {
+                        "Days": 30,
+                        "Coeff": -1
+                      },
+                      "UseIndexEnd": false,
+                      "UseEventEnd": false
+                    },
+                    "RestrictVisit": false,
+                    "IgnoreObservationPeriod": false,
+                    "Occurrence": {
+                      "Type": 0,
+                      "Count": 0,
+                      "IsDistinct": false
+                    }
+                  }
+                ],
+                "DemographicCriteriaList": [],
+                "Groups": []
+              }
+            }
+          ],
+          "CensoringCriteria": [],
+          "CollapseSettings": {
+            "CollapseType": "ERA",
+            "EraPad": 0
+          },
+          "CensorWindow": {}
+        }
+      }
+    ],
+    "eventCohorts": [
+      {
+        "id": 2611,
+        "name": "OT2DSI_Diabetic_neuropathy",
+        "expression": {
+          "cdmVersionRange": ">=5.0.0",
+          "PrimaryCriteria": {
+            "CriteriaList": [
+              {
+                "ConditionOccurrence": {
+                  "CodesetId": 0,
+                  "OccurrenceStartDate": {
+                    "Value": "2001-01-01",
+                    "Op": "bt",
+                    "Extent": "2019-12-31"
+                  },
+                  "ConditionTypeExclude": false
+                }
+              }
+            ],
+            "ObservationWindow": {
+              "PriorDays": 0,
+              "PostDays": 0
+            },
+            "PrimaryCriteriaLimit": {
+              "Type": "First"
+            }
+          },
+          "ConceptSets": [
+            {
+              "id": 0,
+              "name": "[DMP-1075] Diabetic neuropathy",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 35506521,
+                      "CONCEPT_NAME": "Diabetic neuropathy",
+                      "STANDARD_CONCEPT": "C",
+                      "STANDARD_CONCEPT_CAPTION": "Classification",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "10012680",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "MedDRA",
+                      "CONCEPT_CLASS_ID": "PT"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            }
+          ],
+          "QualifiedLimit": {
+            "Type": "First"
+          },
+          "ExpressionLimit": {
+            "Type": "First"
+          },
+          "InclusionRules": [],
+          "EndStrategy": {
+            "DateOffset": {
+              "DateField": "StartDate",
+              "Offset": 0
+            }
+          },
+          "CensoringCriteria": [],
+          "CollapseSettings": {
+            "CollapseType": "ERA",
+            "EraPad": 0
+          },
+          "CensorWindow": {}
+        }
+      },
+      {
+        "id": 2803,
+        "name": "OT2DSI_Heart_Failure",
+        "expression": {
+          "cdmVersionRange": ">=5.0.0",
+          "PrimaryCriteria": {
+            "CriteriaList": [
+              {
+                "ConditionOccurrence": {
+                  "CodesetId": 2,
+                  "First": true,
+                  "OccurrenceStartDate": {
+                    "Value": "2001-01-01",
+                    "Op": "bt",
+                    "Extent": "2019-12-31"
+                  },
+                  "ConditionTypeExclude": false
+                }
+              }
+            ],
+            "ObservationWindow": {
+              "PriorDays": 0,
+              "PostDays": 0
+            },
+            "PrimaryCriteriaLimit": {
+              "Type": "First"
+            }
+          },
+          "AdditionalCriteria": {
+            "Type": "ALL",
+            "CriteriaList": [
+              {
+                "Criteria": {
+                  "ConditionOccurrence": {
+                    "CodesetId": 2,
+                    "ConditionTypeExclude": false
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Days": 1,
+                    "Coeff": 1
+                  },
+                  "End": {
+                    "Days": 90,
+                    "Coeff": 1
+                  },
+                  "UseIndexEnd": false,
+                  "UseEventEnd": false
+                },
+                "RestrictVisit": false,
+                "IgnoreObservationPeriod": false,
+                "Occurrence": {
+                  "Type": 2,
+                  "Count": 1,
+                  "IsDistinct": false
+                }
+              },
+              {
+                "Criteria": {
+                  "ConditionOccurrence": {
+                    "CodesetId": 2,
+                    "ConditionTypeExclude": false
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Days": 91,
+                    "Coeff": 1
+                  },
+                  "End": {
+                    "Coeff": 1
+                  },
+                  "UseIndexEnd": false,
+                  "UseEventEnd": false
+                },
+                "RestrictVisit": false,
+                "IgnoreObservationPeriod": false,
+                "Occurrence": {
+                  "Type": 2,
+                  "Count": 1,
+                  "IsDistinct": false
+                }
+              }
+            ],
+            "DemographicCriteriaList": [],
+            "Groups": []
+          },
+          "ConceptSets": [
+            {
+              "id": 2,
+              "name": "jns - Heart Failure",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 316139,
+                      "CONCEPT_NAME": "Heart failure",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "84114007",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            }
+          ],
+          "QualifiedLimit": {
+            "Type": "First"
+          },
+          "ExpressionLimit": {
+            "Type": "First"
+          },
+          "InclusionRules": [],
+          "EndStrategy": {
+            "DateOffset": {
+              "DateField": "StartDate",
+              "Offset": 0
+            }
+          },
+          "CensoringCriteria": [],
+          "CollapseSettings": {
+            "CollapseType": "ERA",
+            "EraPad": 0
+          },
+          "CensorWindow": {}
+        }
+      },
+      {
+        "id": 2612,
+        "name": "OT2DSI_CKD",
+        "expression": {
+          "cdmVersionRange": ">=5.0.0",
+          "PrimaryCriteria": {
+            "CriteriaList": [
+              {
+                "ConditionOccurrence": {
+                  "CodesetId": 0,
+                  "OccurrenceStartDate": {
+                    "Value": "2001-01-01",
+                    "Op": "bt",
+                    "Extent": "2019-12-31"
+                  },
+                  "ConditionTypeExclude": false
+                }
+              }
+            ],
+            "ObservationWindow": {
+              "PriorDays": 0,
+              "PostDays": 0
+            },
+            "PrimaryCriteriaLimit": {
+              "Type": "First"
+            }
+          },
+          "ConceptSets": [
+            {
+              "id": 0,
+              "name": "[DMP-1075] CKD",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 46271022,
+                      "CONCEPT_NAME": "Chronic kidney disease",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "709044004",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            }
+          ],
+          "QualifiedLimit": {
+            "Type": "First"
+          },
+          "ExpressionLimit": {
+            "Type": "First"
+          },
+          "InclusionRules": [],
+          "EndStrategy": {
+            "DateOffset": {
+              "DateField": "StartDate",
+              "Offset": 0
+            }
+          },
+          "CensoringCriteria": [],
+          "CollapseSettings": {
+            "CollapseType": "ERA",
+            "EraPad": 0
+          },
+          "CensorWindow": {}
+        }
+      },
+      {
+        "id": 2613,
+        "name": "OT2DSI_CHD_Excluding_HF",
+        "expression": {
+          "cdmVersionRange": ">=5.0.0",
+          "PrimaryCriteria": {
+            "CriteriaList": [
+              {
+                "ConditionOccurrence": {
+                  "CodesetId": 0,
+                  "OccurrenceStartDate": {
+                    "Value": "2001-01-01",
+                    "Op": "bt",
+                    "Extent": "2019-12-31"
+                  },
+                  "ConditionTypeExclude": false
+                }
+              }
+            ],
+            "ObservationWindow": {
+              "PriorDays": 0,
+              "PostDays": 0
+            },
+            "PrimaryCriteriaLimit": {
+              "Type": "First"
+            }
+          },
+          "ConceptSets": [
+            {
+              "id": 0,
+              "name": "[DMP-1075] CHD (excluding HF)",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 319844,
+                      "CONCEPT_NAME": "Acute ischemic heart disease",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "413439005",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 37689040,
+                      "CONCEPT_NAME": "Atherosclerotic cardiovascular disease",
+                      "STANDARD_CONCEPT": "C",
+                      "STANDARD_CONCEPT_CAPTION": "Classification",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "10051615",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "MedDRA",
+                      "CONCEPT_CLASS_ID": "LLT"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 315286,
+                      "CONCEPT_NAME": "Chronic ischemic heart disease",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "413838009",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 35205164,
+                      "CONCEPT_NAME": "Coronary artery disease",
+                      "STANDARD_CONCEPT": "C",
+                      "STANDARD_CONCEPT_CAPTION": "Classification",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "10011078",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "MedDRA",
+                      "CONCEPT_CLASS_ID": "PT"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            }
+          ],
+          "QualifiedLimit": {
+            "Type": "First"
+          },
+          "ExpressionLimit": {
+            "Type": "First"
+          },
+          "InclusionRules": [],
+          "EndStrategy": {
+            "DateOffset": {
+              "DateField": "StartDate",
+              "Offset": 0
+            }
+          },
+          "CensoringCriteria": [],
+          "CollapseSettings": {
+            "CollapseType": "ERA",
+            "EraPad": 0
+          },
+          "CensorWindow": {}
+        }
+      },
+      {
+        "id": 2614,
+        "name": "OT2DSI_CeVD",
+        "expression": {
+          "cdmVersionRange": ">=5.0.0",
+          "PrimaryCriteria": {
+            "CriteriaList": [
+              {
+                "ConditionOccurrence": {
+                  "CodesetId": 0,
+                  "OccurrenceStartDate": {
+                    "Value": "2001-01-01",
+                    "Op": "bt",
+                    "Extent": "2019-12-31"
+                  },
+                  "ConditionTypeExclude": false
+                }
+              }
+            ],
+            "ObservationWindow": {
+              "PriorDays": 0,
+              "PostDays": 0
+            },
+            "PrimaryCriteriaLimit": {
+              "Type": "First"
+            }
+          },
+          "ConceptSets": [
+            {
+              "id": 0,
+              "name": "[DMP-1075] CeVD",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 381591,
+                      "CONCEPT_NAME": "Cerebrovascular disease",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "62914000",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 45766070,
+                      "CONCEPT_NAME": "Embolism of internal auditory artery",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "703158007",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 4077982,
+                      "CONCEPT_NAME": "History of cerebrovascular accident",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "275526006",
+                      "DOMAIN_ID": "Observation",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Context-dependent"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 37016638,
+                      "CONCEPT_NAME": "History of nontraumatic ruptured cerebral aneurysm",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "690071000119109",
+                      "DOMAIN_ID": "Observation",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Context-dependent"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 4147995,
+                      "CONCEPT_NAME": "Middle meningeal hemorrhage following injury",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "30400005",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 45766073,
+                      "CONCEPT_NAME": "Occlusion of internal auditory artery",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "703161008",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 43530727,
+                      "CONCEPT_NAME": "Spontaneous cerebral hemorrhage",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "291571000119106",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            }
+          ],
+          "QualifiedLimit": {
+            "Type": "First"
+          },
+          "ExpressionLimit": {
+            "Type": "First"
+          },
+          "InclusionRules": [],
+          "EndStrategy": {
+            "DateOffset": {
+              "DateField": "StartDate",
+              "Offset": 0
+            }
+          },
+          "CensoringCriteria": [],
+          "CollapseSettings": {
+            "CollapseType": "ERA",
+            "EraPad": 0
+          },
+          "CensorWindow": {}
+        }
+      },
+      {
+        "id": 2616,
+        "name": "OT2DSI_Diabetic_retinopathy",
+        "expression": {
+          "cdmVersionRange": ">=5.0.0",
+          "PrimaryCriteria": {
+            "CriteriaList": [
+              {
+                "ConditionOccurrence": {
+                  "CodesetId": 0,
+                  "OccurrenceStartDate": {
+                    "Value": "2001-01-01",
+                    "Op": "bt",
+                    "Extent": "2019-12-31"
+                  },
+                  "ConditionTypeExclude": false
+                }
+              }
+            ],
+            "ObservationWindow": {
+              "PriorDays": 0,
+              "PostDays": 0
+            },
+            "PrimaryCriteriaLimit": {
+              "Type": "First"
+            }
+          },
+          "ConceptSets": [
+            {
+              "id": 0,
+              "name": "[DMP-1075] Diabetic retinopathy",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 35506525,
+                      "CONCEPT_NAME": "Diabetic eye disease",
+                      "STANDARD_CONCEPT": "C",
+                      "STANDARD_CONCEPT_CAPTION": "Classification",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "10012661",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "MedDRA",
+                      "CONCEPT_CLASS_ID": "PT"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 35506530,
+                      "CONCEPT_NAME": "Diabetic retinopathy",
+                      "STANDARD_CONCEPT": "C",
+                      "STANDARD_CONCEPT_CAPTION": "Classification",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "10012689",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "MedDRA",
+                      "CONCEPT_CLASS_ID": "PT"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            }
+          ],
+          "QualifiedLimit": {
+            "Type": "First"
+          },
+          "ExpressionLimit": {
+            "Type": "First"
+          },
+          "InclusionRules": [],
+          "EndStrategy": {
+            "DateOffset": {
+              "DateField": "StartDate",
+              "Offset": 0
+            }
+          },
+          "CensoringCriteria": [],
+          "CollapseSettings": {
+            "CollapseType": "ERA",
+            "EraPad": 0
+          },
+          "CensorWindow": {}
+        }
+      },
+      {
+        "id": 2600,
+        "name": "OT2DSI_PAD",
+        "expression": {
+          "cdmVersionRange": ">=5.0.0",
+          "PrimaryCriteria": {
+            "CriteriaList": [
+              {
+                "ConditionOccurrence": {
+                  "CodesetId": 0,
+                  "OccurrenceStartDate": {
+                    "Value": "2001-01-01",
+                    "Op": "bt",
+                    "Extent": "2019-12-31"
+                  },
+                  "ConditionTypeExclude": false
+                }
+              }
+            ],
+            "ObservationWindow": {
+              "PriorDays": 0,
+              "PostDays": 0
+            },
+            "PrimaryCriteriaLimit": {
+              "Type": "First"
+            }
+          },
+          "ConceptSets": [
+            {
+              "id": 0,
+              "name": "[DMP-1075] PAD",
+              "expression": {
+                "items": [
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 43021868,
+                      "CONCEPT_NAME": "Aneurysm of peripheral artery",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "29721000119101",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 317309,
+                      "CONCEPT_NAME": "Peripheral arterial occlusive disease",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "399957001",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 4111847,
+                      "CONCEPT_NAME": "Peripheral artery spasm",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "195313002",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 321052,
+                      "CONCEPT_NAME": "Peripheral vascular disease",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "400047006",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  },
+                  {
+                    "concept": {
+                      "CONCEPT_ID": 321596,
+                      "CONCEPT_NAME": "Peripheral venous insufficiency",
+                      "STANDARD_CONCEPT": "S",
+                      "STANDARD_CONCEPT_CAPTION": "Standard",
+                      "INVALID_REASON": "V",
+                      "INVALID_REASON_CAPTION": "Valid",
+                      "CONCEPT_CODE": "20696009",
+                      "DOMAIN_ID": "Condition",
+                      "VOCABULARY_ID": "SNOMED",
+                      "CONCEPT_CLASS_ID": "Clinical Finding"
+                    },
+                    "isExcluded": false,
+                    "includeDescendants": true,
+                    "includeMapped": false
+                  }
+                ]
+              }
+            }
+          ],
+          "QualifiedLimit": {
+            "Type": "First"
+          },
+          "ExpressionLimit": {
+            "Type": "First"
+          },
+          "InclusionRules": [],
+          "EndStrategy": {
+            "DateOffset": {
+              "DateField": "StartDate",
+              "Offset": 0
+            }
+          },
+          "CensoringCriteria": [],
+          "CollapseSettings": {
+            "CollapseType": "ERA",
+            "EraPad": 0
+          },
+          "CensorWindow": {}
+        }
+      }
+    ],
+    "combinationWindow": 0,
+    "minCellCount": 5,
+    "maxDepth": 7,
+    "allowRepeats": false
+  }
+}
