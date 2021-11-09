@@ -14,10 +14,6 @@ OT2DSI: Observational study of type 2 diabetes and its complications: a chronolo
 - Publications: **-**
 - Results explorer: **-**
 
-
-Study Description
-==============================
-
 The aim of this study is to identify common occurrence patterns of specific complications in patients with T2D: CKD, DR, DNeu, HF, CVD and CeVD. These patterns will be assessed by population, age at T2D diagnosis and calendar year.
 The primary objective in this study is to characterize the occurrence and its ordered sequence of certain chronic conditions in adult patients with T2D by year, population (database) and age category.
 Secondary objectives:
